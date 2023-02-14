@@ -23,8 +23,22 @@ const app = Vue.createApp({
           text: "stendere i panni",
           done: false,
         },
+        {
+          text: "rifare il letto",
+          done: false,
+        },
+        {
+          text: "portare fuori il cane",
+          done: true,
+        },
       ],
     };
+  },
+
+  methods: {
+    removeTodo(index) {
+      this.todoList.splice(index, 1);
+    },
   },
 });
 

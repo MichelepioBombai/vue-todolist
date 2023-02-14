@@ -13,6 +13,14 @@
       integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
       crossorigin="anonymous"
     />
+    <!-- FONTAWESOME -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
     <!-- LINK CSS -->
     <link rel="stylesheet" href="style.css" />
@@ -36,10 +44,18 @@
         <ul class="list-group my-5">
           <li
             v-for="todo in todoList"
-            class="list-group-item"
+            class="list-group-item d-flex"
             :class="(todo.done) ? 'text-trough' : '' "
           >
             {{todo.text}}
+
+            <button
+              @click="removeTodo(todoIndex)"
+              type="button"
+              class="btn btn-danger ms-auto"
+            >
+              <i class="fa fa-times"></i>
+            </button>
           </li>
         </ul>
       </div>
